@@ -24,7 +24,7 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className='hidden md:flex'>
                     <ul className='flex gap-6 text-lg cursor-pointer'>
-                       <li onClick={() => setMenue('shop')} className=' transition-all duration-200'><Link to='/'>Shop </Link>{menu === 'shop' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => setMenue('shop')} className=' transition-all duration-200'><Link to='/'>Shop </Link>{menu === 'shop' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
                         <li onClick={() => setMenue('men')} className=' transition-all duration-200'><Link to='/men'>Men</Link> {menu === 'men' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
                         <li onClick={() => setMenue('women')} className=' transition-all duration-200'><Link to='/women'>Women</Link> {menu === 'women' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
                         <li onClick={() => setMenue('kids')} className=' transition-all duration-200'><Link to='/kids'>Kids</Link> {menu === 'kids' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
