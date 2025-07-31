@@ -2,7 +2,7 @@ import React from 'react'
 import exclusive_image from '../assets/exclusive_image.png'
 const Offers = () => {
   return (
-    <div className='flex flex-col bg-lime-100 mb-10 mx-10 rounded-md shadow-md w-auto h-100 mb-3 mt-10 md:mt-2 md:flex-row justify-between'>
+    <div className='flex flex-col bg-lime-100 mb-10  mx-10 rounded-md shadow-md w-auto h-100 mb-3 mt-10 md:mt-2 md:flex-row justify-between'>
     <div className=' gap-2 md:mt-20 md:ml-30 items-center text-center'>
         <h1 className='text-6xl'>Exclusive</h1>
         <h1 className='text-6xl mt-4'>Offer for You</h1>

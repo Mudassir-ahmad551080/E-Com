@@ -3,6 +3,7 @@ import Hero from '../component/Hero'
 import Popular from '../component/Popular'
 import Offers from '../component/Offers'
 import NewCollection from '../component/NewCollection'
+import Newslatter from '../component/Newslatter'
 
 const Shop = () => {
   return (
@@ -11,6 +12,7 @@ const Shop = () => {
       <Popular/>
       <Offers/>
       <NewCollection/>
+      <Newslatter/>
     </div>
   )
 }

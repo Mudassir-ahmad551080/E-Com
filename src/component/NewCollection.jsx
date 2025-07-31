@@ -3,7 +3,7 @@ import new_collection from '../assets/new_collections'
 import Items from './Items'
 const NewCollection = () => {
   return (
-    <div className=' mt-90 md:mt-2'>
+    <div className=' mt-90 mb-20 md:mt-2'>
         <div className='items-center text-center'>
         <h1 className='text-5xl'>New Collection</h1>
         </div>
