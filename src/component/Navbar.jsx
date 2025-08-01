@@ -11,6 +11,10 @@ const Navbar = () => {
     const toggleMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 
     return (
         <div className=' sticky top-0 right-0 left-0 w-full relative bg-amber-50 shadow-md z-50'>
@@ -24,10 +28,10 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className='hidden md:flex'>
                     <ul className='flex gap-6 text-lg cursor-pointer'>
-                        <li onClick={() => setMenue('shop')} className=' transition-all duration-200'><Link to='/'>Shop </Link>{menu === 'shop' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => setMenue('men')} className=' transition-all duration-200'><Link to='/men'>Men</Link> {menu === 'men' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => setMenue('women')} className=' transition-all duration-200'><Link to='/women'>Women</Link> {menu === 'women' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => setMenue('kids')} className=' transition-all duration-200'><Link to='/kids'>Kids</Link> {menu === 'kids' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => {setMenue('shop');scrollToTop()}} className=' transition-all duration-200'><Link to='/'>Shop </Link>{menu === 'shop' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => {setMenue('men');scrollToTop()}} className=' transition-all duration-200'><Link to='/men'>Men</Link> {menu === 'men' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => {setMenue('women');scrollToTop()}} className=' transition-all duration-200'><Link to='/women'>Women</Link> {menu === 'women' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => {setMenue('kids');scrollToTop()}} className=' transition-all duration-200'><Link to='/kids'>Kids</Link> {menu === 'kids' ? <hr className='text-3xl  bg-red-400 p-[0.5px]  text-red-400 font-bold' /> : null}</li>
                     </ul>
                 </div>
 
@@ -47,10 +51,10 @@ const Navbar = () => {
             {mobileMenuOpen && (
                 <div className='md:hidden   border-t items-center text-center justify-center h-screen border-amber-300 shadow-inner'>
                     <ul className='flex flex-col  mt-40 p-4 gap-3 text-lg font-semibold'>
-                        <li onClick={() => { setMobileMenuOpen(false); navigate('/shop'); }} className='hover:underline'>Shop</li>
-                        <li onClick={() => { setMobileMenuOpen(false); navigate('/men'); }} className='hover:underline'>Men</li>
-                        <li onClick={() => { setMobileMenuOpen(false); navigate('/women'); }} className='hover:underline'>Women</li>
-                        <li onClick={() => { setMobileMenuOpen(false); navigate('/kids'); }} className='hover:underline'>Kids</li>
+                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/'>Shop</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/men'>Men</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/women'>Women</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/kids'>Kids</Link></li>
                     </ul>
                 </div>
             )}
