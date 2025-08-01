@@ -51,10 +51,10 @@ const Navbar = () => {
             {mobileMenuOpen && (
                 <div className='md:hidden   border-t items-center text-center justify-center h-screen border-amber-300 shadow-inner'>
                     <ul className='flex flex-col  mt-40 p-4 gap-3 text-lg font-semibold'>
-                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/'>Shop</Link></li>
-                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/men'>Men</Link></li>
-                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/women'>Women</Link></li>
-                        <li onClick={() => { setMobileMenuOpen(false)}} className='hover:underline'><Link to='/kids'>Kids</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false);scrollToTop()}} className='hover:underline'><Link to='/'>Shop</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false);scrollToTop()}} className='hover:underline'><Link to='/men'>Men</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false);scrollToTop()}} className='hover:underline'><Link to='/women'>Women</Link></li>
+                        <li onClick={() => { setMobileMenuOpen(false);scrollToTop()}} className='hover:underline'><Link to='/kids'>Kids</Link></li>
                     </ul>
                 </div>
             )}

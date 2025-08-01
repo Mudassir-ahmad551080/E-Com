@@ -5,7 +5,7 @@ const NewCollection = () => {
   return (
     <div className=' mt-90 mb-20 md:mt-2'>
         <div className='items-center text-center'>
-        <h1 className='text-5xl'>New Collection</h1>
+        <h1 className='text-5xl mt-10  md:mt-0'>New Collection</h1>
         </div>
         
         <hr className='mb-4 mt-4' />

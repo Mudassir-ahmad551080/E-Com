@@ -33,7 +33,7 @@ const ShopCategory = (props) => {
 
       {/* Products Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6"
+        className="grid grid-cols-1   ml-15 md:ml-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6"
         initial="hidden"
         animate="visible"
         variants={{
@@ -61,6 +61,9 @@ const ShopCategory = (props) => {
           </motion.div>
         ))}
       </motion.div>
+       <div className="flex justify-center items-center mt-6 mb-10">
+        <button className='bg-pink-500 text-white  rounded-full px-5 cursor-pointer py-3'>Explore More</button>
+       </div>
     </motion.div>
   );
 };

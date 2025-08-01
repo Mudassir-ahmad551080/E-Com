@@ -10,7 +10,7 @@ const Offers = () => {
         <button className='mt-4 rounded-full bg-red-500 text-white p-2  w-40 cursor-pointer'>Check Now</button>
     </div>
     <div>
-        <img className='md:mr-40 ml-10 md:ml-0 h-100' src={exclusive_image} alt="" />
+        <img className='md:mr-40 ml-10 mt-15 mb-10 md:mt-0 md:ml-0 h-100' src={exclusive_image} alt="" />
     </div>
     </div>
   )
