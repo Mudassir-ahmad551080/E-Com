@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+  }
+
   const toggleMode = () => setIsLogin(prev => !prev);
 
   return (
@@ -18,7 +23,7 @@ const LoginSignup = () => {
           {isLogin ? 'Login to Your Account' : 'Create a New Account'}
         </h2>
 
-        <form className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           {!isLogin && (
             <input
               type="text"
