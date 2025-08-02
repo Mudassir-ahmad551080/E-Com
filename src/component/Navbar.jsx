@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../assets/logo.png';
 import cart_icon from '../assets/cart_icon.png';
 import { Menu, X } from 'lucide-react'; // Install lucide-react if not already: npm install lucide-react
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext';
 
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [menu, setMenue] = useState('shop')
+    const {getTotalCartItems} = useContext(ShopContext)
     const toggleMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
@@ -17,11 +19,11 @@ const Navbar = () => {
 
 
     return (
-        <div className=' sticky top-0 right-0 left-0 w-full relative bg-amber-50 shadow-md z-50'>
+        <div id='another-div' className=' sticky top-0 right-0 left-0 w-full relative  z-50'>
             <div className='flex justify-between items-center p-4 md:px-10'>
                 {/* Logo */}
                 <div className='flex items-center gap-2'>
-                    <img src={logo} alt="Logo" className='h-9' />
+                    <Link to='/'  onClick={() => scrollToTop()}><img src={logo} alt="Logo"  className='h-9 cursor-pointer' /></Link>
                     <p className='font-bold text-xl'>Shopper</p>
                 </div>
 
@@ -37,9 +39,9 @@ const Navbar = () => {
 
                 {/* Cart & Login */}
                 <div className='flex items-center gap-4'>
-                    <Link to='/login'><button className='bg-red-600 cursor-pointer active:bg-red-400 text-white px-3 py-1 rounded text-sm'>Login</button></Link>
-                    <Link to='/cart'> <img src={cart_icon} alt="Cart" className='h-9 cursor-pointer' /></Link>
-                    <div className='mt-0 flex z-10 items-center justify-center p-1  right-7 relative top-0 bottom-10 w-2 p-2 h-2 bg-red-600 text-white rounded-full'>0</div>
+                    <Link onClick={() => scrollToTop()} to='/login'><button className='bg-red-600 cursor-pointer active:bg-red-400 text-white px-3 py-1 rounded text-sm'>Login</button></Link>
+                    <Link onClick={() => scrollToTop()} to='/cart'> <img src={cart_icon} alt="Cart" className='h-9 cursor-pointer' /></Link>
+                    <div  className='mt-0 flex z-10 items-center justify-center p-1  right-7 relative top-0 bottom-10 w-2 p-2 h-2 bg-red-600 text-white rounded-full'>{getTotalCartItems()}</div>
                     {/* Hamburger Icon */}
                     <div className='md:hidden cursor-pointer' onClick={toggleMenu}>
                         {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}

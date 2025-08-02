@@ -14,6 +14,7 @@ const App = () => {
   return (
     <>
     <Navbar/>
+    <hr className='fixed top-0 left-0 right-0 h-px bg-white bg-opacity-50'/>
     <Routes>
       {/* <Route path="/" element={<Home />} /> */}
        <Route path='/' element={<Shop/>}/>

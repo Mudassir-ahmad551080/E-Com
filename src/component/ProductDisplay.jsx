@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import star_icon from '../assets/star_icon.png';
 import star_dull_icon from '../assets/star_dull_icon.png';
+import { ShopContext } from '../context/ShopContext';
 
 const ProductDisplay = ({ product }) => {
+  const {addtocart} = useContext(ShopContext);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-6xl mx-auto">
       {/* Left section - Images */}
@@ -72,6 +74,7 @@ const ProductDisplay = ({ product }) => {
 
         {/* Add to Cart */}
         <motion.button
+        onClick={()=>addtocart(product.id)}
           whileTap={{ scale: 0.95 }}
           className="bg-black text-white mt-4 px-6 py-2 rounded-lg hover:bg-gray-800 transition"
         >

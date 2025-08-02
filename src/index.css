@@ -4,3 +4,16 @@ body{
     font-family: 'Poppins', sans-serif;
 }
  
+#mydiv::-webkit-scrollbar{
+    display: none;
+    position: sticky;
+}
+
+#another-div{
+    backdrop-filter: blur(10px);
+}
+
+hr{
+    position: fixed;
+   
+}
