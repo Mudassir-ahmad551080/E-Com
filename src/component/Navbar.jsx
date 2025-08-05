@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
     return (
-        <div id='another-div' className=' sticky shadow-md top-0 right-0 left-0 w-full relative  z-50'>
+        <div id='another-div' className={`sticky ${mobileMenuOpen?"bg-white":null}  shadow-md top-0 right-0 left-0 w-full relative  z-50`}>
             <div className='flex justify-between items-center p-4 md:px-10'>
                 {/* Logo */}
                 <div className='flex items-center gap-2'>
@@ -31,9 +31,9 @@ const Navbar = () => {
                 <div className='hidden md:flex'>
                     <ul className='flex gap-6 text-lg cursor-pointer'>
                         <li onClick={() => { setMenue('shop'); scrollToTop() }} className=' transition-all  duration-200'><Link to='/'>Shop </Link>{menu === 'shop' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-12 text-center items-center  text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => { setMenue('men'); scrollToTop() }} className=' transition-all duration-200'><Link to='/men'>Men</Link> {menu === 'men' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-12 text-center items-center   text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => { setMenue('women'); scrollToTop() }} className=' transition-all duration-200'><Link to='/women'>Women</Link> {menu === 'women' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-12 text-center items-center   text-red-400 font-bold' /> : null}</li>
-                        <li onClick={() => { setMenue('kids'); scrollToTop() }} className=' transition-all duration-200'><Link to='/kids'>Kids</Link> {menu === 'kids' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-12 text-center items-center   text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => { setMenue('men'); scrollToTop() }} className=' transition-all duration-200'><Link to='/men'>Men</Link> {menu === 'men' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-10 text-center items-center   text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => { setMenue('women'); scrollToTop() }} className=' transition-all duration-200'><Link to='/women'>Women</Link> {menu === 'women' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-18 text-center items-center   text-red-400 font-bold' /> : null}</li>
+                        <li onClick={() => { setMenue('kids'); scrollToTop() }} className=' transition-all duration-200'><Link to='/kids'>Kids</Link> {menu === 'kids' ? <hr className='text-3xl  bg-red-400 p-[0.5px] w-9 text-center items-center   text-red-400 font-bold' /> : null}</li>
                     </ul>
                 </div>
 
@@ -43,7 +43,7 @@ const Navbar = () => {
                     <Link onClick={() => scrollToTop()} to='/cart'> <img src={cart_icon} alt="Cart" className='h-9 cursor-pointer' /></Link>
                     <div className='mt-0 flex z-10 items-center justify-center p-1  right-7 relative top-0 bottom-10 w-2 p-2 h-2 bg-red-600 text-white rounded-full'>{getTotalCartItems()}</div>
                     {/* Hamburger Icon */}
-                    <div className='md:hidden cursor-pointer' onClick={toggleMenu}>
+                    <div className='md:hidden  cursor-pointer' onClick={toggleMenu}>
                         {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             {mobileMenuOpen && (
-                <div className='md:hidden   border-t items-center text-center justify-center h-screen border-amber-300 shadow-inner'>
+                <div className='md:hidden  bg-white  border-t items-center text-center justify-center h-screen border-amber-300 shadow-inner'>
                     <ul className='flex flex-col  mt-40 p-4 gap-3 text-lg font-semibold'>
                         <li onClick={() => { setMobileMenuOpen(false); scrollToTop() }} className='hover:underline'><Link to='/'>Shop</Link></li>
                         <li onClick={() => { setMobileMenuOpen(false); scrollToTop() }} className='hover:underline'><Link to='/men'>Men</Link></li>
